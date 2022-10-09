@@ -1,12 +1,8 @@
-import struct
+# a = [[1, 2, 3],
+#      [4, 5, 6],
+#      [7, 8, 9]]
+# b = [a[x][:] for x in a]
 
-F = open('data.bin', 'wb')
-data = struct.pack('>i4sh', 7, b'spam', 8)
-print(data)  #b'\x00\x00\x00\x07spam\x00\x08'
-F.write('data')
-F.close()
-F = open('data.bin', 'rb')
-data = F.read()
-print(data)  #b'\x00\x00\x00\x07spam\x00\x08'
-values = struct.unpack('>i4sh', data)  #(7, b'spam', 8)
-print(values)
+D1 = {'a': 1, 'b': 3}
+D2 = {'a': 1, 'b': 3}
+print(sorted(D1.items()) < sorted(D2.items()))  # False
